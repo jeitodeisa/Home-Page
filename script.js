@@ -90,7 +90,7 @@ function finalizarPedidoWhatsApp() {
     }
     
     const numeroWhatsApp = "+558892927689";
-    let mensagem = `Olá, Jeito de Isa! Gostaria de comprar os seguintes itens:\n\n`;
+    let mensagem = `Olá! Gostaria de comprar os seguintes itens:\n\n`;
     
     carrinho.forEach(item => {
         mensagem += `✔ ${item.nome}`;
