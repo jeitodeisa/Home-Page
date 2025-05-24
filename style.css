@@ -1,0 +1,1218 @@
+/* Estilos Gerais */
+:root {
+    --rosa-principal: #f8c6d0;
+    --rosa-escuro: #e6a8b7;
+    --cinza-claro: #f5f5f5;
+    --cinza-escuro: #333;
+    --branco: #fff;
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-texto: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    margin: 0;
+    padding: 0;
+    color: var(--cinza-escuro);
+    background-color: var(--cinza-claro);
+    font-size: 16px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--branco);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: var(--rosa-escuro);
+    margin: 0;
+}
+
+.slogan {
+    font-family: var(--fonte-texto);
+    font-weight: 400;
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--cinza-escuro);
+    letter-spacing: 0.5px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--cinza-escuro);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--rosa-escuro);
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(rgba(237, 236, 236, 0), rgba(235, 234, 234, 0.3)), url('img/Banner\ paisagem\ loja\ de\ roupas\ moderno\ minimalista\ bege\ e\ preto.png');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    min-height: 300px;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Seções */
+.secao {
+    padding: 60px 5%;
+}
+/* Estilo para seções de categorias */
+.secao-categoria {
+    background-color: var(--branco);
+    padding: 40px 5%;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.secao h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--rosa-escuro);
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.secao h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: var(--rosa-principal);
+    margin: 15px auto;
+}
+
+/* Produtos */
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.produto {
+    background: var(--branco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+}
+
+.produto img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.produto h3 {
+    margin: 15px 20px 5px;
+    font-size: 1.1rem;
+    font-family: var(--fonte-titulo);
+}
+
+.preco {
+    margin: 0 20px 15px;
+    font-weight: bold;
+    color: var(--rosa-escuro);
+}
+
+.produto button {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 0 20px 20px;
+    padding: 12px;
+    background: var(--rosa-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    min-height: 48px;
+}
+
+.produto button:hover {
+    background: var(--rosa-principal);
+}
+
+/* Sobre */
+.sobre {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, white 50%, var(--cinza-claro) 50%);
+}
+
+.sobre-conteudo {
+    flex: 1;
+    padding: 40px;
+}
+
+.titulo-destaque {
+    font-size: 2.5rem;
+    color: var(--rosa-escuro);
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.texto-sobre {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--cinza-escuro);
+    max-width: 500px;
+}
+
+.sobre-imagem {
+    flex: 1;
+    height: 400px;
+    background: url('img/sobre.jpg') center/cover;
+    box-shadow: -10px 10px 0 var(--rosa-principal);
+}
+
+/* Rodapé/Contato */
+footer {
+    background: var(--rosa-escuro);
+    color: var(--branco);
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FOOTER CORRIGIDO */
+.footer-corrected {
+    background: #e6a8b7; /* Rosa escuro */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.footer-slogan {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 280px;
+    margin: 0 auto 20px;
+}
+
+.footer-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin: 20px auto;
+    max-width: 200px;
+}
+
+.contact-title, .social-title {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 12px 0;
+    font-size: 0.95rem;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-item i {
+    width: 16px;
+    text-align: center;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+}
+
+.social-link:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.footer-copyright {
+    margin-top: 25px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--branco);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--rosa-principal);
+}
+
+.footer-section p, 
+.footer-section a {
+    color: var(--branco);
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.footer-section i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--rosa-principal);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+
+.social-link {
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--rosa-principal);
+}
+
+
+
+.contato h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-family: var(--fonte-titulo);
+}
+
+.contato p {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contato i {
+    margin-right: 10px;
+}
+
+.redes-sociais a {
+    color: var(--branco);
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: var(--rosa-principal);
+}
+
+/* WhatsApp Flutuante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Carrinho de Compras */
+.carrinho {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100vh;
+    background: var(--branco);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.carrinho.aberto {
+    right: 0;
+}
+
+.carrinho-conteudo {
+    padding: 20px;
+}
+
+.carrinho-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--rosa-principal);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.carrinho h3 {
+    color: var(--rosa-escuro);
+    margin: 0;
+}
+
+.fechar-carrinho {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--rosa-escuro);
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.fechar-carrinho:hover {
+    color: #ff6b6b;
+}
+
+.carrinho-itens {
+    max-height: 60vh;
+    overflow-y: auto;
+    margin: 15px 0;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.item-carrinho img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-carrinho-info {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.item-carrinho-info h4 {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.item-carrinho-info p {
+    margin: 5px 0 0;
+    font-size: 0.8rem;
+    color: var(--rosa-escuro);
+}
+
+.remover-item {
+    color: #ff6b6b;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.carrinho-total {
+    border-top: 2px solid var(--rosa-principal);
+    padding-top: 15px;
+}
+
+.carrinho-total p {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+#finalizar-pedido {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: var(--rosa-escuro);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#finalizar-pedido:hover {
+    background: var(--rosa-principal);
+}
+
+#limpar-carrinho {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: none;
+    color: #666;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.icone-carrinho {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: var(--rosa-escuro);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.icone-carrinho span {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff6b6b;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Menu Mobile */
+.menu-desktop {
+    display: flex;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+#menu-hamburger {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--rosa-escuro);
+    cursor: pointer;
+}
+
+.mobile-links {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 1000;
+    flex-direction: column;
+    width: 200px;
+}
+
+.mobile-links a {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .menu-desktop {
+        display: none;
+    }
+    
+    .menu-mobile {
+        display: block;
+    }
+    
+    header {
+        padding: 15px 5%;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-bottom: 10px;
+    }
+    
+    .banner {
+        height: 300px;
+    }
+    
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+    
+    .sobre {
+        flex-direction: column;
+        background: white;
+    }
+    
+    .sobre-conteudo {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .sobre-imagem {
+        width: 100%;
+        margin-top: 30px;
+        box-shadow: none;
+    }
+    
+    .carrinho {
+        width: 90%;
+        right: -90%;
+    }
+    
+    .carrinho.aberto {
+        right: 0;
+    }
+    
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+   .lightbox-content {
+        max-width: 95vw;
+        max-height: 70vh;
+        margin-top: 10vh;
+    }
+    
+    .close-lightbox {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+    }
+    
+    .lightbox-caption {
+        font-size: 1rem;
+    }
+
+    .filtros-tamanho {
+        gap: 8px;
+    }
+    
+    .filtro-tamanho {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .tamanho-disponivel {
+        font-size: 0.85rem;
+    }
+   
+}
+
+
+
+    
+
+@media (max-width: 480px) {
+    .banner {
+        height: 250px;
+    }
+    
+    .secao {
+        padding: 40px 5%;
+    }
+    
+    .produto button {
+        padding: 15px;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-description,
+    .contact-item,
+    .social-link {
+        font-size: 0.85rem;
+    }
+    
+    .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav a.active {
+    color: var(--rosa-escuro);
+    font-weight: 600;
+    border-bottom: 2px solid var(--rosa-principal);
+}
+
+/* Estilos do Carrossel */
+.carrossel-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Largura máxima para mobile */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carrossel-item {
+    min-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    color: var(--rosa-escuro);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.carrossel-btn:hover {
+    background: var(--branco);
+    color: var(--rosa-principal);
+}
+
+.carrossel-anterior {
+    left: 10px;
+}
+
+.carrossel-proximo {
+    right: 10px;
+}
+
+.carrossel-indicadores {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.carrossel-indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carrossel-indicador.ativo {
+    background: var(--rosa-escuro);
+}
+
+/* Esconder scrollbar */
+.carrossel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carrossel-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Estilos específicos para seção de T-shirts */
+#tshirts .produto {
+    background: var(--branco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px; /* Espaçamento interno aumentado */
+}
+
+#tshirts .produto:hover {
+    transform: translateY(-5px);
+}
+
+#tshirts .produto img {
+    width: 90%;
+    height: 220px;
+    object-fit: cover;
+    margin: 0 auto 15px; /* Margem inferior aumentada */
+    border-radius: 8px; /* Borda arredondada opcional */
+}
+
+#tshirts .produto h3 {
+    font-size: 1.1rem;
+    font-family: var(--fonte-titulo);
+    margin: 0 0 8px 0; /* Margem ajustada */
+    padding: 0 10px; /* Padding lateral */
+}
+
+#tshirts .preco {
+    font-weight: bold;
+    color: var(--rosa-escuro);
+    margin: 0 0 15px 0; /* Margem ajustada */
+    padding: 0 10px; /* Padding lateral */
+    font-size: 1.2rem; /* Tamanho aumentado */
+}
+
+#tshirts .btn-comprar {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 0 15px 15px;
+    padding: 12px;
+    background: var(--rosa-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: auto; /* Empurra o botão para baixo */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+}
+
+#tshirts .btn-comprar:hover {
+    background: var(--rosa-principal);
+}
+
+/* Estilos do Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-height: 80vh;
+    max-width: 90vw;
+    margin-top: 5vh;
+    animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8);}
+    to {transform: scale(1);}
+}
+
+.lightbox-caption {
+    margin: 15px auto;
+    color: white;
+    font-size: 1.2rem;
+    max-width: 80%;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-lightbox:hover {
+    color: var(--rosa-principal);
+}
+
+/* Efeito ao clicar na imagem do produto */
+.produto img {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.produto img:hover {
+    transform: scale(1.02);
+}
+
+/* Estilos para os filtros de tamanho */
+.filtros-tamanho {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.filtro-tamanho {
+    padding: 8px 15px;
+    background: white;
+    border: 2px solid var(--rosa-principal);
+    border-radius: 20px;
+    color: var(--rosa-escuro);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filtro-tamanho:hover {
+    background: var(--rosa-principal);
+    color: white;
+}
+
+.filtro-tamanho.ativo {
+    background: var(--rosa-escuro);
+    color: white;
+    border-color: var(--rosa-escuro);
+}
+
+/* Estilo para o indicador de tamanho */
+.tamanho-disponivel {
+    margin: 0 15px 10px;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Estilos da seção T-shirts */
+#tshirts {
+    padding: 40px 5%;
+    background-color: #fff;
+}
+
+/* Filtros por tamanho */
+.filtros-tamanho {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    padding: 0 15px;
+}
+
+.filtro-tamanho {
+    padding: 8px 20px;
+    background: white;
+    border: 2px solid var(--rosa-principal);
+    border-radius: 25px;
+    color: var(--rosa-escuro);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.filtro-tamanho:hover {
+    background: var(--rosa-principal);
+    color: white;
+}
+
+.filtro-tamanho.ativo {
+    background: var(--rosa-escuro);
+    color: white;
+    border-color: var(--rosa-escuro);
+}
+
+/* Indicador de tamanho */
+.tamanho-disponivel {
+    margin: 0 15px 10px;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tamanho-disponivel i {
+    color: var(--rosa-escuro);
+}
+
+/* Carrossel */
+.carrossel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carrossel-item {
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Botões de navegação */
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    color: var(--rosa-escuro);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.carrossel-btn:hover {
+    background: var(--branco);
+    color: var(--rosa-principal);
+}
+
+.carrossel-anterior {
+    left: 10px;
+}
+
+.carrossel-proximo {
+    right: 10px;
+}
+
+/* Indicadores do carrossel */
+.carrossel-indicadores {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.carrossel-indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s;
+}
+
+.carrossel-indicador.ativo {
+    background: var(--rosa-escuro);
+}
+
+/* Estilos dos produtos */
+.produto {
+    background: var(--branco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+}
+
+.produto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.produto h3 {
+    margin: 15px 15px 5px;
+    font-size: 1.1rem;
+    font-family: var(--fonte-titulo);
+}
+
+.preco {
+    margin: 0 15px 10px;
+    font-weight: bold;
+    color: var(--rosa-escuro);
+    font-size: 1.1rem;
+}
+
+.btn-comprar {
+    display: block;
+    width: calc(100% - 30px);
+    margin: 0 15px 15px;
+    padding: 12px;
+    background: var(--rosa-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-comprar:hover {
+    background: var(--rosa-principal);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carrossel-item {
+        padding: 0 10px;
+    }
+    
+    .carrossel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .produto img {
+        height: 250px;
+    }
+    
+    .filtros-tamanho {
+        gap: 8px;
+    }
+    
+    .filtro-tamanho {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+

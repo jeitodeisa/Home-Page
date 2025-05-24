@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeito de Isa - Moda Feminina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+/* Responsividade */
+@media (max-width: 768px) {
+    nav .menu-desktop {
+        display: none;
+    }
+
+    nav .menu-mobile {
+        display: block;
+        position: relative;
+    }
+
+    #menu-hamburger {
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--cinza-escuro);
+        cursor: pointer;
+        padding: 10px 20px;
+    }
+
+    .mobile-links {
+        display: none;
+        flex-direction: column;
+        background: var(--branco);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 99;
+    }
+
+    .mobile-links a {
+        padding: 15px;
+        text-align: center;
+        border-top: 1px solid #eee;
+        color: var(--cinza-escuro);
+    }
+
+    .banner {
+        height: 40vh;
+    }
+
+    .sobre {
+        flex-direction: column;
+        background: var(--cinza-claro);
+    }
+
+    .sobre-conteudo {
+        padding: 20px;
+    }
+
+    .sobre-imagem {
+        display: none;
+    }
+
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .produto img {
+        height: auto;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-divider {
+        margin: 20px 0;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+    <!-- Lightbox para visualização de imagens -->
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="lightbox-caption"></div>
+</div>
+    <!-- Cabeçalho -->
+    <nav>
+        <div class="menu-desktop">
+            <a href="#destaques">Destaques</a>
+            <a href="#vestidos">Vestidos</a>
+            <a href="#tshirts">T-shirts</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </div>
+        <div class="menu-mobile">
+            <button id="menu-hamburger">☰</button>
+            <div class="mobile-links">
+                <a href="#destaques">Destaques</a>
+                <a href="#vestidos">Vestidos</a>
+                <a href="#tshirts">T-shirts</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Principal -->
+    <section class="banner">
+        <div class="banner-texto">
+            <!-- Texto opcional pode ser adicionado aqui -->
+        </div>
+    </section>
+
+    <!-- Destaques -->
+<section id="destaques" class="secao">
+    <h2>Peças em Destaque</h2>
+    <div class="carrossel-container">
+        <button class="carrossel-btn carrossel-anterior" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="carrossel">
+            <!-- Produto 1 -->
+            <div class="produto carrossel-item">
+                <img src="img/tshirt/G/IMG_0972.jpg" alt="Blusa Estampada Tamanho G">
+                <h3>Blusa Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+            
+            <!-- Produto 2 -->
+            <div class="produto carrossel-item">
+                <img src="img/tshirt/G/IMG_0980.jpg" alt="Blusa Estampada Tamanho G">
+                <h3>Blusa Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>  
+            
+            <!-- Produto 3 -->
+            <div class="produto carrossel-item">
+                <img src="img/tshirt/G/IMG_0968.jpg" alt="Blusa Estampada Tamanho G">
+                <h3>Blusa Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+        </div>
+        
+        <button class="carrossel-btn carrossel-proximo" aria-label="Próximo">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    
+    <div class="carrossel-indicadores">
+        <button class="carrossel-indicador ativo" data-index="0"></button>
+        <button class="carrossel-indicador" data-index="1"></button>
+        <button class="carrossel-indicador" data-index="2"></button>
+    </div>
+</section>
+        
+    
+      <!-- Seção T-shirts -->
+<section id="tshirts" class="secao">
+    <h2>T-shirts</h2>
+    
+    <!-- Filtros por tamanho -->
+    <div class="filtros-tamanho">
+        <button class="filtro-tamanho ativo" data-tamanho="todos">Todos</button>
+        <button class="filtro-tamanho" data-tamanho="P">Tamanho P</button>
+        <button class="filtro-tamanho" data-tamanho="M">Tamanho M</button>
+        <button class="filtro-tamanho" data-tamanho="G">Tamanho G</button>
+        <button class="filtro-tamanho" data-tamanho="unico">Tamanho Único</button>
+    </div>
+    
+    <div class="carrossel-container">
+        <button class="carrossel-btn carrossel-anterior" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="carrossel">
+            <!-- T-shirt 1 - G -->
+            <div class="produto carrossel-item" data-tamanho="G">
+                <img src="img/tshirt/G/IMG_0467.jpg" alt="T-shirt Estampada - Tamanho G">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho G</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+            
+            <!-- T-shirt 2 - G -->
+            <div class="produto carrossel-item" data-tamanho="G">
+                <img src="img/tshirt/G/IMG_0968.jpg" alt="T-shirt Estampada - Tamanho G">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho G</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 3 - G -->
+            <div class="produto carrossel-item" data-tamanho="G">
+                <img src="img/tshirt/G/IMG_0970.jpg" alt="T-shirt Estampada - Tamanho G">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho G</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 4 - G -->
+            <div class="produto carrossel-item" data-tamanho="G">
+                <img src="img/tshirt/G/IMG_0971.jpg" alt="T-shirt Estampada - Tamanho G">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho G</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 5 - G -->
+            <div class="produto carrossel-item" data-tamanho="G">
+                <img src="img/tshirt/G/IMG_0972.jpg" alt="T-shirt Estampada - Tamanho G">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho G</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 6 - G -->
+            <div class="produto carrossel-item" data-tamanho="G">
+                <img src="img/tshirt/G/IMG_0974.jpg" alt="T-shirt Estampada - Tamanho G">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho G</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 7 - G -->
+            <div class="produto carrossel-item" data-tamanho="G">
+                <img src="img/tshirt/G/IMG_0977.jpg" alt="T-shirt Estampada - Tamanho G">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho G</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 8 - G -->
+            <div class="produto carrossel-item" data-tamanho="G">
+                <img src="img/tshirt/G/IMG_0978.jpg" alt="T-shirt Estampada - Tamanho G">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho G</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 9 - G -->
+            <div class="produto carrossel-item" data-tamanho="G">
+                <img src="img/tshirt/G/IMG_0980.jpg" alt="T-shirt Estampada - Tamanho G">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho G</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 1 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0464.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 2 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0465.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 3 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0466.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 4 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0468.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 5 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0472.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 6 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0473.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 7 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0474.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 8 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0481.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 9 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0482.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 10 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0970.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 11 - M -->
+            <div class="produto carrossel-item" data-tamanho="M">
+                <img src="img/tshirt/M/IMG_0978.jpg" alt="T-shirt Estampada - Tamanho M">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,90</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho M</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 4 - P -->
+            <div class="produto carrossel-item" data-tamanho="P">
+                <img src="img/tshirt/P/IMG_0468.jpg" alt="T-shirt Estampada - Tamanho P">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho P</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <div class="produto carrossel-item" data-tamanho="P">
+                <img src="img/tshirt/P/IMG_0469.jpg" alt="T-shirt Estampada - Tamanho P">
+                <h3>T-shirt Estampada</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho P</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+            
+            <!-- T-shirt 1 - Único -->
+            <div class="produto carrossel-item" data-tamanho="unico">
+                <img src="img/tshirt/TamanhoUnico/IMG_0992.jpg" alt="Blusa Gola Alta - Tamanho Único">
+                <h3>Blusa Gola Alta</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho Único</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+
+            <!-- T-shirt 2 - Único -->
+            <div class="produto carrossel-item" data-tamanho="unico">
+                <img src="img/tshirt/TamanhoUnico/IMG_0993.jpg" alt="Blusa Gola Alta - Tamanho Único">
+                <h3>Blusa Gola Alta</h3>
+                <p class="preco">R$ 25,00</p>
+                <p class="tamanho-disponivel"><i class="fas fa-tag"></i> Tamanho Único</p>
+                <button class="btn-comprar">
+                    <i class="fas fa-plus"></i> Adicionar
+                </button>
+            </div>
+        </div>
+        
+        <button class="carrossel-btn carrossel-proximo" aria-label="Próximo">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    
+    <div class="carrossel-indicadores">
+        <!-- Indicadores serão gerados dinamicamente pelo JavaScript -->
+    </div>
+</section>
+
+<!-- Seção Vestidos -->
+        <section id="vestidos" class="secao">
+            <h2>Vestidos</h2>
+            <div class="produtos">
+                <!-- Vestido 1 -->
+                <div class="produto">
+                    <img src="img/vestidos/Vestido ribana canelada - Preto.png" alt="Vestido ribana canelada - Preto">
+                    <h3>Vestido ribana canelada - Preto</h3>
+                    <p class="preco">R$ 45,00</p>
+                    <button class="btn-comprar">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+                
+                <!-- Vestido 2 -->
+                <div class="produto">
+                    <img src="img/vestidos/vestido-verdeclaro-tamanho-unico.jpg" alt="Vestido ribana canelada Verde Claro">
+                    <h3>Vestido ribana canelada Verde Claro</h3>
+                    <p class="preco">R$ 45,00</p>
+                    <button class="btn-comprar">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+                
+                <!-- Vestido 3 -->
+                <div class="produto">
+                    <img src="img/vestidos/vestido-verdeescuro-tamanho-unico.png" alt="Vestido ribana canelada- Verde escuro">
+                    <h3>Vestido ribana canelada- Verde escuro</h3>
+                    <p class="preco">R$ 45,00</p>
+                    <button class="btn-comprar">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="secao sobre">
+        <div class="sobre-conteudo">
+            <h2 class="titulo-destaque">Jeito de Isa</h2>
+            <p class="texto-sobre">Desde 2020, trazendo peças que celebram a feminilidade e o conforto. Cada peça é selecionada com cuidado para mulheres reais, que buscam se sentir bem em qualquer ocasião.</p>
+        </div>
+        
+    </section>
+
+    <!-- Carrinho de Compras -->
+    <div id="carrinho" class="carrinho">
+        <div class="carrinho-conteudo">
+            <div class="carrinho-cabecalho">
+                <h3>Seu Pedido <span id="carrinho-contador">0</span></h3>
+                <button class="fechar-carrinho">&times;</button>
+            </div>
+            <div id="carrinho-itens" class="carrinho-itens">
+                <!-- Itens serão adicionados aqui -->
+            </div>
+            <div class="carrinho-total">
+                <p>Total: <span id="carrinho-total">R$ 0,00</span></p>
+                <button id="finalizar-pedido">Finalizar pelo WhatsApp</button>
+                <button id="limpar-carrinho">Limpar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contato" class="footer-corrected">
+        <div class="footer-brand">
+            <h2 class="footer-title">Jeito de Isa</h2>
+            <p class="footer-slogan">Moda feminina com conforto e elegância para mulheres reais.</p>
+        </div>
+    
+        <div class="footer-divider"></div>
+    
+        <div class="footer-contact">
+            <h3 class="contact-title">Contato</h3>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+558892927689">(88) 9292-7689</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contato@jeitodeisa.com.br">contato@jeitodeisa.com.br</a>
+            </div>
+        </div>
+    
+        <div class="footer-divider"></div>
+    
+        <div class="footer-social">
+            <h3 class="social-title">Siga-nos</h3>
+            <a href="https://instagram.com/jeitodeisa" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+                <span>@jeitodeisa</span>
+            </a>
+        </div>
+    
+        <div class="footer-copyright">
+            <p>© <span id="current-year"></span> Jeito de Isa</p>
+            <p>Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/+558892927689" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
